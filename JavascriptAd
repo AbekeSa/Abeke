@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Learn JS</title>
+</head>
+<style>
+/* Core Styles */
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0C4CAD;
+  color: #fff;
+  font-size: 1.1em;
+  line-height: 1.5;
+  text-align: center;
+}
+
+section img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 1em 0;
+}
+
+p {
+  margin: 0;
+  padding: 1em 0;
+}
+
+.btn, .btnLast {
+  display: inline-block;
+  font-size: 0.6em;
+  color: black;
+  background: white;
+  text-decoration: none;
+  padding: 1em 2em;
+  border: 1px solid #666;
+  border-radius: 15%;
+  margin: 2em 0;
+  transition: background 0.3s linear 0s, color 0.5s linear 0s;
+  transition-property: transform;
+  transition-duration: 0.1s;
+}
+
+.btn:hover {
+  background: red;
+  color: white;
+  
+}
+
+button {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border-radius: 15%;
+}
+
+/* Navigation bar */
+#navbarContainer {
+
+}
+#navbar {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px; 
+  align-items: center;
+}
+
+#navbar .btn {
+  font-size: 0.7em;
+  color: white;
+  border-radius: 5%;
+  background-color: black;
+  padding: 1em 1.2em;
+  margin-left: 1em;
+  border: 1px solid gray;
+  width: 120px;
+  transition: background 0.3s linear 0s, color 0.5s linear 0s;
+  border-radius: 10%;
+}
+
+#navbar a:hover {
+  background-color: white;
+  color: black; 
+}
+
+
+/* Header Showcase */
+
+#showcase {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
+  background-image: url('https://149351115.v2.pressablecdn.com/wp-content/uploads/2018/01/BrutalLifeCycleJavascript-1200x675.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#showcase h1 {
+  font-size: 2em;
+  padding-top: 70px;
+  padding-bottom: 0;
+  color: white;
+}
+
+#showcase p {
+  padding: 10px 10px;
+    color: white;
+}
+
+#showcase .content-wrap, #section-a .content-wrap, #section-a2 .content-wrap {
+  padding: 0 2em;
+}
+
+
+/* Table stuff */
+table, th, td {
+  border: 1px solid #BEC1BE;
+  border-collapse: collapse;
+  position: relative;
+  padding: 15px;
+}
+
+table {
+  max-width: 100%;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  z-index: 5;
+}
+
+td {
+  width: 17%;
+}
+
+th {
+  background-color: #D8D8D8;
+}
+
+
+
+/* Section a and a2 */
+
+#section-a {
+  background: #eaeaea;
+  color: #333;
+  padding: 2em 1em;
+}
+
+#section-a p {
+text-align: justify;
+}
+
+#section-a2 {
+  background: white;
+  color: black;
+  padding: 2em 1em;
+
+}
+
+#section-a2 p {
+text-align: justify;
+}
+
+ol>li {
+  text-align: left;
+}
+
+/* Styles for "effects" */
+
+.marked {
+  color: blue;
+  cursor: pointer;
+}
+
+#loseCursor {
+cursor: none;
+  color: blue;
+}
+
+#changeCursor {
+cursor: alias;
+  color: blue;
+}
+
+#changeColor {
+cursor: alias;
+  color: blue;
+}
+
+#changeColor:hover {
+  color: red;
+}
+
+#changeFont {
+color: blue;
+}
+
+#changeFont:hover {
+font-size: 2em;
+}
+
+#js1 {
+  color: blue;
+  cursor: pointer;
+}
+
+.flashEffect {
+	animation: flash linear 2s infinite;
+  color: blue;
+}
+
+@keyframes flash {
+	0% { opacity: 1; } 
+	15% { opacity: .2; } 
+  30% { opacity: 1; } 
+	100% { opacity: 1; }
+}
+
+/* Section B */
+
+#section-b {
+  padding: 2em 1em 1em;
+}
+
+#section-b ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#section-b li {
+  margin-bottom: 1em;
+  background: #fff;
+  color: #333;
+}
+
+.card-content {
+  padding: 1.5em;
+}
+
+
+/* Section C */
+
+#section-c {
+  background: #fff;
+  color: #333;
+  padding: 2em;
+}
+
+/* Section D / Boxes */
+
+#section-d .box {
+  padding: 2em;
+  color: #fff;
+}
+
+#section-d .box:first-child {
+  background: #1D1B12;
+}
+
+.btnLast {
+  color: blue;
+  background-color: white;
+  transition-property: transform;
+  transition-duration: 0.1s;
+}
+
+.btnLast:hover {
+  background-color: red;
+  color: white;
+}
+
+/* Footer */
+
+#main-footer {
+  padding: 2em;
+  background: #041B3F;
+  color: #fff;
+  text-align: center;
+}
+
+#main-footer a {
+  color: #0C54C4;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+/* Media Queries */
+
+@media (min-width: 500px) {
+  
+  #showcase {
+  min-height: 450px;
+}
+  
+  #navbar {
+    display: flex;
+    flex-direction: row; /* Flex-direction is changed from column into row */
+    justify-content: center;
+  }
+  
+#navbar .btn {
+  width: 90px; /* made it a bit smaller */
+}
+  
+  #showcase h1 {
+  font-size: 3em;
+  padding-top: 130px;
+  padding-bottom: 0;
+}
+  
+#showcase p {
+  padding: 10px 10px;
+  }
+}
+
+
+@media (min-width: 700px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+  }
+
+  #showcase { 
+    min-height: 650px; 
+   }
+  
+
+  #showcase h1 {
+  font-size: 4em;
+  padding-top: 180px;
+  padding-bottom: 0;
+  }
+  
+  #showcase p {
+  font-size: 24px;
+  }
+  
+  #section-a .content-text {
+    columns: 2;
+    column-gap: 2em;
+  } /* section-a and -a2 and -b have two columns now */
+
+  #section-a .content-text p {
+    padding-top: 0;
+    text-align: justify;
+  }
+  
+  #section-a2 .content-text {
+    columns: 2;
+    column-gap: 2em;
+  }
+
+  #section-a2 .content-text p {
+    padding-top: 0;
+    text-align: justify;
+  }
+
+  .content-wrap,
+  #section-b ul {
+    grid-column: 2/4;
+  }
+
+  .box,
+  #main-footer div {
+    grid-column: span 2;
+  }
+
+  #section-b ul {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #section-b li {
+    width: 28%;
+  }
+}
+</style>
+<body>
+
+  <!-- Header Showcase -->
+<header id="showcase" class="grid">
+  <div class="content-wrap">
+    
+    <h1 id="theTitle">LEARN WITH US</h1>
+    <p id="titlePar">We are offering a new course on JavaScript</p>
+      </div>
+    <div id="navbarContainer">
+      <div class="navbar" id="navbar">
+       <a href="#section-a" class="btn">JavaScript</a>
+       <a href="#section-a2" class="btn">HTML</a>      
+       <a href="#main-footer" class="btn">Contact Us</a>
+   </div>
+ </div> 
+
+</header>
+
+<!-- Main Area -->
+<main id="main">
+  <!-- Section A -->
+  <section id="section-a" class="grid">
+    <div class="content-wrap">
+      <h2 class="content-title">JavaScript is great!</h2>
+      <div class="content-text">
+        <p>An Uzbek guy, teaching you a master class on Javascript! Thoug... even without using JS, just with the tools of CSS, we can do a lot of cool stuff. For example, if you hover over <span id="loseCursor">this text,</span> your cursor disappears. Or <span id="changeCursor">here,</span> the cursor changes its form.</p>
+        
+        <p>We can <span class="flashEffect">flash some words </span> if we want, or <span id="changeColor"> change colors</span> or <span id="changeFont"> font-sizes. </span> You can make some elements simply vanish using opacity values. </p>
+        <p>So what we are saying is that <strong>CSS is great,</strong> but if you add even a little bit of JavaScript in your coding, you will have more control over effects. </p>
+        <p>Let us, for example, change the background color of some table cells. For this, I created these three buttons: see what happens to the table below, when you click them. <button onclick="changeBG('table1','#9DCEFF')">Blue</button> <button onclick="changeBG('table1','#F0F0B1')">Yellow</button> <button onclick="changeBG('table1','pink')">Pink</button>. (If you click <span class="marked" onclick="changeBG('table1', 'white')">here,</span> it will become <em>white.</em>) We could go even more crazy and make things move! 
+     Just <span id="js1">click here</span> and see what happens! Or <span onclick="fadeOut('table1');" class="marked">fade out </span> our table and then <span onclick="fadeIn('table1');" class="marked">fade it in </span> again. This time we are simply changing the opacity of the table.</p>
+  
+<table id="table1">
+      <thead>
+                <tr>
+                    <th>Our Courses: </th>
+                    <th>Duration</th>
+                    <th>Price</th>
+                </tr>
+        </thead>
+
+        <tbody>
+                <tr>
+                    <td>HTML Intro</td>
+                    <td>8 hours</td>
+                    <td>$7.00</td>
+                </tr>
+                                           <tr>
+                    <td>CSS5</td>
+                    <td>6 hours</td>
+                    <td>$4.40</td>
+                </tr>
+                <tr>
+                    <td>JS (beginners)</td>
+                    <td>12 hours</td>
+                    <td>$16.00</td>
+                </tr>
+                <tr>
+                    <td>JS (advanced)</td>
+                    <td>52 hours</td>
+                    <td>$152.00</td>
+                </tr>
+                <tr>
+                    <td id="salad">React framework</td>
+                    <td>6 weeks</td>
+                    <td>$228.00</td>
+                </tr>
+        </tbody>
+</table>
+        <p>Enroll our JS course, and you can do all these things yourself.</p>
+        
+        </div>
+    </div>
+  </section>
+  
+  <!-- Section A2 -->
+  
+  <section id="section-a2" class="grid">
+    <div class="content-wrap">
+      <h2 class="content-title">HTML Course</h2>
+      <div class="content-text">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. This site is created with the Mobile-First Approach.
+          <ol> 
+            <li>Facere ullam nihil fedomu kamen opa?</li>
+            <li>Repellendus modi excepturi et optio. </li>
+            <li>Em nihil dicta voluptatum, sint atque. </li>
+        </ol>
+        <p>Odio exercita tionem vitae harum rem. Facere cumque unde beatae quidem porro repudiandae, dolo rum ratione corporis aliquam nesciunt aut enim perspi ciatis officia provi dent aspernatur accusamus est ducimus qui quasi excepturi cum debitis. Asper natur fugiat harum volup tatibus cupiditate recu sandae? Repel lendus modi excepturi et optio at cumque est dolor eaque exercitationem, tempora volup tates alias conse quatur. <br> 
+          <p>Vitae eius quae fuga repreh enderit harum magni pariatur. Dquis quam maxime officia sed necessi tatibus repellat beatae culpa omnis deleniti, perferendis commodi hic cupiditate nulla? Illum, deserunt cum. </p>
+        </div>
+    </div>
+  </section>
+
+  <!-- Section B -->
+  <section id="section-b" class="grid">
+    <ul>
+      <li>
+        <div class="card">
+          <img src="https://secureservercdn.net/160.153.137.153/6a0.ef1.myftpupload.com/wp-content/uploads/2019/05/CSS3_vs_CSS2_banner_nimap.png?time=1582312950" alt="">
+          <div class="card-content">
+            <h3 class="card-title">CSS in 6 hours</h3>
+            <p>Lorem this coursemi is banging at-youren doorito. Bait amet consect elit. Nostrum cum maiores.</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="card">
+          <img src="https://andreyex.ru/wp-content/uploads/2020/02/Kak-udalit-fajly-i-katalogi-v-Python.jpg" alt="">
+          <div class="card-content">
+            <h3 class="card-title">Intro to Python</h3>
+            <p>And ipsum this course also-imo banging. Dedllwab sseppd sit amet elit exercita tionem moment.</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="card">
+          <img src="https://4.bp.blogspot.com/-pfKJaGQg8tU/WehsLAYzzkI/AAAAAAAAAKo/pIBwhyiTfQwK7V7-thyVdA7JLsRHI6VQgCLcBGAs/s1600/HTML.png" alt="">
+          <div class="card-content">
+            <h3 class="card-title">HTML5 course</h3>
+            <p>Youck could easily amet learnemo HTML yourself, but better ipsum pay us itationem, we teach.</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Section C -->
+  <section id="section-c" class="grid">
+    <div class="content-wrap">
+      <h2 class="flashEffect" class="content-title">We have a terrific course for you...</h2>
+      <p>Lorem we want yourento moneyto. Iipsum you canto all thisto learnemo yourself, but dolor sit amet consectetur, adipisicing elit. Maxime nam rerum vel earum error fugiat cupiditate, dolore eius! Minus, explicabo.</p>
+    </div>
+  </section>
+
+  <!-- Section D -->
+  <section id="section-d" class="grid">
+    <div class="box">
+      <h2 class="content-title">Place your order</h2>
+      <p>Lorem ipsum, do NOT sendimento to the address beloweto, as itis simpliso fake.</p>
+      <p>Daov senturo schretomin</p>
+       <a href="#" class="btn">Read More</a>
+    </div>
+    <div class="box">
+      <h2 class="content-title">Contact us</h2>
+      <p>Lorem, ipsum dolor sit amet consectetur  earum porro iusto doloremque! </p>
+       <p> contact@course.js</p>
+       <a href="#" class="btnLast">Read More</a>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer id="main-footer" class="grid">
+  <div>Learn Coding with Us</div>
+  <div><a href="#" target="_blank">"Abdugapir Sa."</a></div>
+</footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js"></script>
+  <script>
+  // Playing with colors
+var areaToMoveMouse = document.getElementById('navbarContainer')
+areaToMoveMouse.addEventListener('mousemove', runEvent);
+
+var changeColors = document.getElementById('theTitle')
+var changeColors2 = document.getElementById('titlePar')
+
+function runEvent(e){
+  changeColors.style.color = "rgb(255, "+e.offsetX+","+e.offsetY+")";
+  changeColors2.style.color = "rgb("+e.offsetX+", 255, "+e.offsetY+")";
+}
+
+//move the table with the anime:
+var moveMyTable = anime({
+  targets: 'table',
+  translateX: [
+    { value: -100, duration: 2500 },
+    { value: -100, duration: 200 },
+    { value: 200, duration: 1500 },
+    { value: -200, duration: 1500 },
+    { value: 10, duration: 1500 },
+    { value: 10, duration: 500 },
+    { value: 0, duration: 1500 },
+  ],
+ 
+  rotate:{
+    value: '2turn',
+    easing: 'easeInOutSine'
+  },
+  delay: 2000,
+  autoplay:false,
+  loop:false
+});
+
+document.querySelector('#js1').onclick = moveMyTable.play;
+
+
+// To change the bg color for table cells:
+
+function changeBG(el, clr) {
+  var elem = document.getElementById(el);
+  elem.style.transition = "background 1.0s ease-in 0s";
+  elem.style.background = clr;
+}
+
+//Fading out and fading in:
+function fadeOut(el){
+	var elem = document.getElementById(el);
+	elem.style.transition = "opacity 0.5s linear 0s";
+	elem.style.opacity = 0;
+}
+function fadeIn(el){
+	var elem = document.getElementById(el);
+	elem.style.transition = "opacity 0.5s linear 0s";
+	elem.style.opacity = 1;
+}
+ </script>
+ </body>
+</html>
